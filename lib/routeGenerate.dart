@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:mercadopoupanca/homePage/homePage.dart';
+import 'package:mercadopoupanca/pages/homePage/homePage.dart';
 // ignore: unused_import
 
 class RouteGenerator {
