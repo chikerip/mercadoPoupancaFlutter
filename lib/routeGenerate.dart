@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
+import 'package:mercadopoupanca/pages/barcodeScanPage/barcodeScanPage.dart';
 import 'package:mercadopoupanca/pages/homePage/homePage.dart';
 // ignore: unused_import
 
@@ -16,6 +17,8 @@ class RouteGenerator {
         //'/second',
         //arguments: data
         //);
+      case '/scan':
+       return MaterialPageRoute(builder: (_)=> const barcodeScan());
 
       default:
         return _errorRoute();
