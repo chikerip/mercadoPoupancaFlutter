@@ -10,8 +10,9 @@ class barcodeScan extends StatefulWidget {
 }
 
 class _barcodeScan extends State<barcodeScan> {
-   MobileScannerController cameraController = MobileScannerController();
-  String data = 'aaaaa';
+  MobileScannerController cameraController = MobileScannerController();
+  bool scanned = false;
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -25,14 +26,22 @@ class _barcodeScan extends State<barcodeScan> {
           onDetect: (capture) {
             final List<Barcode> barcodes = capture.barcodes;
             for (final barcode in barcodes) {
-              setState(() {
-                data = barcode.rawValue!;
-              });
+              if(scanned == false){
+                Navigator.of(context).pushNamed('/product', arguments: barcode.rawValue!);
+                setState(() {
+                  scanned = true;
+                });
+              } else {
+                setState(() {
+                  scanned = false;
+                });
+              }
             }
           },
         ),
         Positioned(
           top: 0,
+          // ignore: sized_box_for_whitespace
           child: Container(
             width: screenWidth,
             height: screenheight * 0.1,
@@ -55,7 +64,6 @@ class _barcodeScan extends State<barcodeScan> {
               iconSize: 32.0,
               onPressed: () => cameraController.toggleTorch(),
             ),
-            Text(data),
             IconButton(
               color: Colors.white,
               icon: ValueListenableBuilder(

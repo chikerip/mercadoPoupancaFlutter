@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:mercadopoupanca/pages/barcodeScanPage/barcodeScanPage.dart';
 import 'package:mercadopoupanca/pages/homePage/homePage.dart';
+import 'package:mercadopoupanca/pages/productPage/productPage.dart';
 // ignore: unused_import
 
 class RouteGenerator {
@@ -14,11 +15,14 @@ class RouteGenerator {
       case '/':
         return MaterialPageRoute(builder: (_) => const MyHomePage());
         //Navigator.of(context).pushNamed(
-        //'/second',
+        //'/scan',
         //arguments: data
         //);
       case '/scan':
        return MaterialPageRoute(builder: (_)=> const barcodeScan());
+      
+      case '/product':
+        return MaterialPageRoute(builder: (_)=>const productsPage());
 
       default:
         return _errorRoute();
