@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, camel_case_types, unnecessary_cast
 import 'package:flutter/material.dart';
+import 'package:mercadopoupanca/components/AppAdvertsBar.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class barcodeScan extends StatefulWidget {
@@ -20,6 +21,7 @@ class _barcodeScan extends State<barcodeScan> {
     return Scaffold(
     body: Stack(
       children: [
+
         MobileScanner(
           // fit: BoxFit.contain,
           controller: cameraController,
@@ -39,15 +41,88 @@ class _barcodeScan extends State<barcodeScan> {
             }
           },
         ),
+        
+        Stack(
+          children: [
+            Positioned(
+              top: screenheight * 0.4,
+              left: 0,
+              child: Container(
+              height: screenheight * 0.2,
+              width: screenWidth * 0.1,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            ),
+            
+            Positioned(
+              top: screenheight * 0.4,
+              right: 0,
+              child: Container(
+              height: screenheight * 0.2,
+              width: screenWidth * 0.1,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            ),
+            
+            Positioned(
+              top: 0,
+              child: Container(
+              height: screenheight * 0.4,
+              width: screenWidth,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            ),
+            
+            Positioned(
+              bottom: 0,
+              child: Container(
+              height: screenheight * 0.4,
+              width: screenWidth,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            ),
+          ],
+        ),
+
         Positioned(
+          top: screenheight * 0.4,
+          right: screenWidth * 0.1,
+          child: Container(
+            width: screenWidth * 0.8,
+            height: screenheight * 0.2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.white, width: screenWidth * 0.01),
+            ),
+          ),
+        ),
+
+        const Positioned(
           top: 0,
+          child: AppAdvertsBar(),
+        ),
+        
+        Positioned(
+          top: screenheight * 0.1,
           // ignore: sized_box_for_whitespace
           child: Container(
-            width: screenWidth,
-            height: screenheight * 0.1,
+            padding: EdgeInsets.fromLTRB(screenWidth * 0.02, 0, screenWidth * 0.02, 0),
+            margin: EdgeInsets.fromLTRB(screenWidth * 0.02, 0, screenWidth * 0.02, 0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(50)
+            ),
+            width: screenWidth * 0.95,
+            height: screenheight * 0.08,
             child: Row(
             mainAxisAlignment:MainAxisAlignment.spaceBetween,
           children: [
+            IconButton(
+              onPressed: () => {
+                Navigator.of(context).pushNamed('/')
+              }, 
+              icon: Icon(Icons.arrow_back_ios)
+            ),
             IconButton(
               color: Colors.white,
               icon: ValueListenableBuilder(
@@ -55,7 +130,7 @@ class _barcodeScan extends State<barcodeScan> {
                 builder: (context, state, child) {
                   switch (state as TorchState) {
                     case TorchState.off:
-                      return const Icon(Icons.flash_off, color: Colors.grey);
+                      return const Icon(Icons.flash_off, color: Colors.black);
                     case TorchState.on:
                       return const Icon(Icons.flash_on, color: Colors.yellow);
                   }
@@ -71,9 +146,9 @@ class _barcodeScan extends State<barcodeScan> {
                 builder: (context, state, child) {
                   switch (state as CameraFacing) {
                     case CameraFacing.front:
-                      return const Icon(Icons.camera_front);
+                      return const Icon(Icons.camera_front, color: Colors.black);
                     case CameraFacing.back:
-                      return const Icon(Icons.camera_rear);
+                      return const Icon(Icons.camera_rear, color: Colors.black);
                   }
                 },
               ),
@@ -84,6 +159,7 @@ class _barcodeScan extends State<barcodeScan> {
         ),
           )
           )
+        
         ]
       ),
     );

@@ -111,7 +111,7 @@ class _AppSeachBar extends State<AppSeachBar>{
                 ),
               child: IconButton(
                 onPressed: () => {
-                  Navigator.of(context).pushNamed('/scan', arguments: null),
+                  Navigator.of(context).pushNamed('/filter', arguments: null),
                 }, 
                 icon: const Icon(Icons.filter_list_outlined, color: Colors.black,)
               ),
@@ -130,7 +130,7 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
-    
+
     return ListView.builder(
         itemCount: 25,
         itemBuilder: (context, index) {
@@ -148,7 +148,9 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                 ),
                 width: screenWidth * 0.45,
                 height: screenheight * 0.26,
-                child: Column(
+                child: Stack(
+                  children: [
+                    Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/products%2FdefaultImg.png?alt=media&token=87a9d1d0-0c2a-49e1-a955-b62fc63636e3',
@@ -247,6 +249,34 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
 
                   ],
                 ),
+                   
+                    Visibility(
+                      visible: (0 > 0),
+                      child: Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        height: screenheight * 0.05,
+                        width: screenWidth * 0.15,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomLeft: Radius.circular(10)),
+                          color: Color(0xffF5A636),
+                        ),
+                        child: Text(
+                          '25%',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: (screenWidth / screenheight) * 35,
+                            color: Colors.white
+                          ),
+                        ),
+                      )
+                    ),
+                    )
+                    
+                  ],
+                  )
               ),
               
               Container(
@@ -256,7 +286,9 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                 ),
                 width: screenWidth * 0.45,
                 height: screenheight * 0.26,
-                child: Column(
+                child: Stack(
+                  children: [
+                    Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/products%2FdefaultImg.png?alt=media&token=87a9d1d0-0c2a-49e1-a955-b62fc63636e3',
@@ -354,6 +386,34 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                     )
                   ],
                 ),
+                  
+                    Visibility(
+                      visible: (1 > 0),
+                      child: Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        height: screenheight * 0.05,
+                        width: screenWidth * 0.15,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomLeft: Radius.circular(10)),
+                          color: Color(0xffF5A636),
+                        ),
+                        child: Text(
+                          '25%',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: (screenWidth / screenheight) * 35,
+                            color: Colors.white
+                          ),
+                        ),
+                      )
+                    ),
+                    )
+                    
+                  ],
+                  )
               ),
               
             ],
