@@ -21,7 +21,7 @@ class _productsPage extends State<productsPage> {
         children: [
           const AppAdvertsBar(),
           Container(
-            color: Colors.grey,
+            color: Color(0xffD9D9D9),
             height: screenheight * 0.93,
             width: screenWidth,
             child: Container(
@@ -32,7 +32,7 @@ class _productsPage extends State<productsPage> {
                   Container(
                     width: screenWidth * 0.92,
                     height: screenheight * 0.1,
-                    color: Colors.grey,
+                    color: Color(0xffD9D9D9),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -87,9 +87,9 @@ class _productsPage extends State<productsPage> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
-                                color: Colors.grey.withOpacity(1),
+                                color: Color(0xffD9D9D9),
                                 spreadRadius: 5,
                                 blurRadius: 6,
                                 offset: Offset(0, 3), // changes position of shadow

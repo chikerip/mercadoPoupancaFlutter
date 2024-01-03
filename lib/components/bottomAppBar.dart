@@ -65,9 +65,9 @@ class _HamburgerMenu extends State<HamburgerMenu> {
               height: screenheight * 0.1,
               width: hamburgerOn ? screenWidth * 0.95 : screenWidth * 0.22,
               decoration: BoxDecoration(
-                color: Colors.yellow,
+                color: const Color(0xffF5A636),
                 border: Border.all(
-                  color: Colors.yellow,
+                  color: const Color(0xffF5A636),
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(50))
               ),
@@ -88,29 +88,59 @@ class _HamburgerMenu extends State<HamburgerMenu> {
                     duration: const Duration(milliseconds: 100),
                     curve: Curves.easeOut,
                     opacity: iconsHamburgerOn ? 1 : 0,
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Icon(
-                          Icons.home,
-                          color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/');
+                          },
+                          child: const Icon(
+                            Icons.home,
+                            color: Colors.white,
+                          ),
                         ),
-                        Icon(
-                          Icons.list,
-                          color: Colors.white,
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/catalog');
+                          },
+                          child: const Icon(
+                            Icons.list,
+                            color: Colors.white,
+                          ),
                         ),
-                        Icon(
-                          Icons.shopping_bag,
-                          color: Colors.white,
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/cart');
+                          },
+                          child: const Icon(
+                            Icons.shopping_bag,
+                            color: Colors.white,
+                          ),
                         ),
-                        Icon(
-                          Icons.account_circle,
-                          color: Colors.white,
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/account');
+                          },
+                          child: const Icon(
+                            Icons.account_circle,
+                            color: Colors.white,
+                          ),
                         ),
-                        Icon(
-                          Icons.settings,
-                          color: Colors.white,
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/settings');
+                          },
+                          child: const Icon(
+                            Icons.settings,
+                            color: Colors.white,
+                          ),
                         ),
+
                       ],
                     ),
                   ),
