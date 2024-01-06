@@ -42,8 +42,8 @@ class _filterPage extends State<filterPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: () => {
-                            Navigator.of(context).pushNamed('/')
+                          onPressed: () {
+                            Navigator.pop(context);
                           }, 
                           icon: Icon(Icons.arrow_back_ios)
                         ),

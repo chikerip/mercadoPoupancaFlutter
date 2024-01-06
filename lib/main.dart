@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 void main() async {
   await Hive.initFlutter();
 
+  // ignore: unused_local_variable
   var box = await Hive.openBox('localStorage');
 
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.montserrat().fontFamily,
       ),
       title: 'Mercado Poupança',
-      initialRoute: '/register',
+      initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

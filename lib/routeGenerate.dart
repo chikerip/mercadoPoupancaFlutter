@@ -4,6 +4,7 @@ import 'package:mercadopoupanca/pages/barcodeScanPage/barcodeScanPage.dart';
 import 'package:mercadopoupanca/pages/catalogPage/catalogPage.dart';
 import 'package:mercadopoupanca/pages/filterPage/filterPage.dart';
 import 'package:mercadopoupanca/pages/homePage/homePage.dart';
+import 'package:mercadopoupanca/pages/loginPage/loginPage.dart';
 import 'package:mercadopoupanca/pages/productPage/productPage.dart';
 import 'package:mercadopoupanca/pages/registerPage/registerPage.dart';
 // ignore: unused_import
@@ -36,6 +37,9 @@ class RouteGenerator {
       case '/register':
         return MaterialPageRoute(builder: (_)=> const registerPage());
       
+      case '/login':
+        return MaterialPageRoute(builder: (_)=> const loginPage());
+
       default:
         return _errorRoute();
     }
