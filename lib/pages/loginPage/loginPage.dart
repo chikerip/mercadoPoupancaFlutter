@@ -182,7 +182,7 @@ class _loginPage extends State<loginPage> {
                                   ),
                                 ],
                           ),
-                          child: const Text('REGISTAR',
+                          child: const Text('LOGIN',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold
