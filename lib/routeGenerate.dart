@@ -5,6 +5,7 @@ import 'package:mercadopoupanca/pages/catalogPage/catalogPage.dart';
 import 'package:mercadopoupanca/pages/filterPage/filterPage.dart';
 import 'package:mercadopoupanca/pages/homePage/homePage.dart';
 import 'package:mercadopoupanca/pages/productPage/productPage.dart';
+import 'package:mercadopoupanca/pages/registerPage/registerPage.dart';
 // ignore: unused_import
 
 class RouteGenerator {
@@ -28,8 +29,13 @@ class RouteGenerator {
 
       case '/product':
         return MaterialPageRoute(builder: (_)=>const productsPage());
+      
       case '/catalog':
         return MaterialPageRoute(builder: (_)=> const catalogPage());
+      
+      case '/register':
+        return MaterialPageRoute(builder: (_)=> const registerPage());
+      
       default:
         return _errorRoute();
     }

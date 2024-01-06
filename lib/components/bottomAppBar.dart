@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class HamburgerMenu extends StatefulWidget {
   const HamburgerMenu({super.key});
@@ -13,6 +14,7 @@ class HamburgerMenu extends StatefulWidget {
 class _HamburgerMenu extends State<HamburgerMenu> {
   bool hamburgerOn = false;
   bool iconsHamburgerOn = true;
+  final _localStorage = Hive.box('localStorage');
 
   @override
   Widget build(BuildContext context){
@@ -123,20 +125,14 @@ class _HamburgerMenu extends State<HamburgerMenu> {
 
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushNamed('/account');
+                            if(_localStorage.get('token') == null){
+                              Navigator.of(context).pushNamed('/register');
+                            } else {
+                              Navigator.of(context).pushNamed('/account');
+                            }
                           },
                           child: const Icon(
                             Icons.account_circle,
-                            color: Colors.white,
-                          ),
-                        ),
-
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pushNamed('/settings');
-                          },
-                          child: const Icon(
-                            Icons.settings,
                             color: Colors.white,
                           ),
                         ),

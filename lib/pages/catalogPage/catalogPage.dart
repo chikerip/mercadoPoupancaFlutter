@@ -1,4 +1,5 @@
 // ignore_for_file: file_names, prefer_const_constructors, camel_case_types
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mercadopoupanca/components/AppAdvertsBar.dart';
 import 'package:mercadopoupanca/components/bottomAppBar.dart';
@@ -75,6 +76,7 @@ class _AppSeachBar extends State<AppSeachBar>{
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, screenWidth * 0.03, 0),
                   child: Container(
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -84,12 +86,14 @@ class _AppSeachBar extends State<AppSeachBar>{
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: screenWidth * 0.43,
+                    child: Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Fpingo%20doce.png?alt=media&token=8afba80c-a6af-4dcb-8cf4-b8d205ced295'),
                   ),
                 ),
 
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, screenWidth * 0.03, 0),
                   child: Container(
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -99,12 +103,14 @@ class _AppSeachBar extends State<AppSeachBar>{
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: screenWidth * 0.43,
+                    child: Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Fmercadona.png?alt=media&token=8312a14c-a01c-46dd-883c-cb1175c776c9'),
                   ),
                 ),
 
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, screenWidth * 0.03, 0),
                   child: Container(
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -114,12 +120,14 @@ class _AppSeachBar extends State<AppSeachBar>{
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: screenWidth * 0.43,
+                    child: Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Flidl.png?alt=media&token=6285ae8c-dae9-438b-af27-a4802c47afc1'),
                   ),
                 ),
 
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, screenWidth * 0.03, 0),
                   child: Container(
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -129,12 +137,14 @@ class _AppSeachBar extends State<AppSeachBar>{
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: screenWidth * 0.43,
+                    child: Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Fcontinente.png?alt=media&token=dd4115f8-f87b-4279-92f9-af59030bdc5e'),
                   ),
                 ),
 
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, screenWidth * 0.03, 0),
                   child: Container(
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -144,6 +154,7 @@ class _AppSeachBar extends State<AppSeachBar>{
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: screenWidth * 0.43,
+                    child: Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Faldi.png?alt=media&token=53e982d8-1f1a-48f0-98ee-11138b967b74'),
                   ),
                 ),
               ],
@@ -155,7 +166,7 @@ class _AppSeachBar extends State<AppSeachBar>{
 
 class _AppBuilderContainer extends State<AppBuilderContainer>{
   //container1 2 * index, container2 (2 * index) + 1;
-
+  bool abc = true;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -241,41 +252,6 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                     ),
                     ),
                     
-                    Container(
-                      padding: EdgeInsets.only(top: !false ? screenheight * 0.02 : 0),
-                      margin:EdgeInsets.fromLTRB(screenWidth * 0.03, screenheight * 0.01, screenWidth * 0.03, 0),
-                      width: screenWidth * 0.45,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2FPingo_Doce_logo.png?alt=media&token=b4eb6870-789e-44d8-ab7a-ddbfed6c047e',
-                                height: screenheight * 0.04,
-                                width: screenWidth * 0.20
-                              ),
-                              Visibility(
-                                visible: false,
-                                child: Text(
-                                  'e mais outros',
-                                  style: TextStyle(
-                                    fontSize: (10)
-                                  ),
-                                  )
-                              ),
-                            ],
-                          ),
-                          GestureDetector(
-                            onTap: () => {
-                              Navigator.of(context).pushNamed('/product', arguments: null)
-                            },
-                            child: const Icon(Icons.shopping_basket, color: Colors.black,)
-                          ),
-                        ],
-                    ),
-                    )
 
                   ],
                 ),
@@ -303,8 +279,46 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                         ),
                       )
                     ),
-                    )
+                    ),
                     
+                    Positioned(
+                      bottom: screenheight * 0.01,
+                      child: Container(
+                        padding: EdgeInsets.only(top: !abc ? screenheight * 0.02 : 0),
+                        margin:EdgeInsets.fromLTRB(screenWidth * 0.03, screenheight * 0.01, screenWidth * 0.03, 0),
+                        width: screenWidth * 0.38,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Fpingo%20doce.png?alt=media&token=8afba80c-a6af-4dcb-8cf4-b8d205ced295',
+                                  height: screenheight * 0.04,
+                                  width: screenWidth * 0.20
+                                ),
+                                Visibility(
+                                  visible: false,
+                                  child: Text(
+                                    'e mais outros',
+                                    style: TextStyle(
+                                      fontSize: (10)
+                                    ),
+                                    )
+                                ),
+                              ],
+                            ),
+                            GestureDetector(
+                              onTap: () => {
+                                Navigator.of(context).pushNamed('/product', arguments: null)
+                              },
+                              child: const Icon(Icons.shopping_basket, color: Colors.black,)
+                            ),
+                          ],
+                      ),
+                      )
+                    )
                   ],
                   )
               ),
@@ -379,41 +393,6 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                     ),
                     ),
                    
-                    Container(
-                      padding: EdgeInsets.only(top: !true ? screenheight * 0.02 : 0),
-                      margin:EdgeInsets.fromLTRB(screenWidth * 0.03, screenheight * 0.01, screenWidth * 0.03, 0),
-                      width: screenWidth * 0.45,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2FPingo_Doce_logo.png?alt=media&token=b4eb6870-789e-44d8-ab7a-ddbfed6c047e',
-                                height: screenheight * 0.04,
-                                width: screenWidth * 0.20
-                              ),
-                              Visibility(
-                                visible: true,
-                                child: Text(
-                                  'e mais outros',
-                                  style: TextStyle(
-                                    fontSize: (10)
-                                  ),
-                                  )
-                              ),
-                            ],
-                          ),
-                          GestureDetector(
-                            onTap: () => {
-                              Navigator.of(context).pushNamed('/product', arguments: null)
-                            },
-                            child: const Icon(Icons.shopping_basket, color: Colors.black,)
-                          ),
-                        ],
-                    ),
-                    )
                   ],
                 ),
                   
@@ -440,8 +419,46 @@ class _AppBuilderContainer extends State<AppBuilderContainer>{
                         ),
                       )
                     ),
-                    )
+                    ),
                     
+                    Positioned(
+                      bottom: screenheight * 0.01,
+                      child: Container(
+                        padding: EdgeInsets.only(top: !abc ? screenheight * 0.02 : 0),
+                        margin:EdgeInsets.fromLTRB(screenWidth * 0.03, screenheight * 0.01, screenWidth * 0.03, 0),
+                        width: screenWidth * 0.38,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.network('https://firebasestorage.googleapis.com/v0/b/mercadopoupanca-2aac2.appspot.com/o/stores%2Fpingo%20doce.png?alt=media&token=8afba80c-a6af-4dcb-8cf4-b8d205ced295',
+                                  height: screenheight * 0.04,
+                                  width: screenWidth * 0.20
+                                ),
+                                Visibility(
+                                  visible: true,
+                                  child: Text(
+                                    'e mais outros',
+                                    style: TextStyle(
+                                      fontSize: (10)
+                                    ),
+                                    )
+                                ),
+                              ],
+                            ),
+                            GestureDetector(
+                              onTap: () => {
+                                Navigator.of(context).pushNamed('/product', arguments: null)
+                              },
+                              child: const Icon(Icons.shopping_basket, color: Colors.black,)
+                            ),
+                          ],
+                      ),
+                      )
+                    )
                   ],
                   )
               ),
